@@ -14,8 +14,8 @@ class RconClient:
 
         self.is_authenticated = False
 
-        self._reader: asyncio.StreamReader = None
-        self._writer: asyncio.StreamWriter = None
+        self._reader: asyncio.StreamReader | None = None
+        self._writer: asyncio.StreamWriter | None = None
 
     async def __aenter__(self) -> "RconClient":
         if not self._writer:
@@ -33,7 +33,7 @@ class RconClient:
             await self._send(3, self.password)
             self.is_authenticated = True
     
-    async def _read_data(self, data_len: int) -> str:
+    async def _read_data(self, data_len: int) -> bytes:
         data = b""
         
         while len(data) < data_len:
@@ -64,9 +64,7 @@ class RconClient:
 
         return data
 
-        
-
     async def send(self, command: str) -> str:
         result = await self._send(2, command)
-        asyncio.sleep(1)
+        await asyncio.sleep(0.5)
         return result
