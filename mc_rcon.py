@@ -96,5 +96,8 @@ class RconClient:
         command should be the full message to send to the server including trailing forward slash, i.e '/list'
         """
         result = await self._send(PacketTypes.command, command)
-        await asyncio.sleep(0.5)
+
+        # This sleep was added by the original author with a comment that there is no explanation.
+        # I am leaving here incase we encounter strange issues, but the answer is almost certainly not to sleep here.
+        # await asyncio.sleep(0.003)
         return result
