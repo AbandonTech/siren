@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "mcrcon"
+name = "siren"
 version = "0.1.0"
 description = ""
 authors = ["fisher60 <kyler@abandontech.com>"]
