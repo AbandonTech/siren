@@ -2,7 +2,7 @@
 name = "mcrcon"
 version = "0.1.0"
 description = ""
-authors = ["fisher60 <wakefollower@gmail.com>"]
+authors = ["fisher60 <kyler@abandontech.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
