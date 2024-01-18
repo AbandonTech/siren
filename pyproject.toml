@@ -1,11 +1,18 @@
 [tool.poetry]
 name = "abandontech-siren"
 version = "0.1.0"
-description = ""
+description = "Async Python bindings for Minecraft's RCON protocol"
+readme = "README.md"
+repository = "https://github.com/AbandonTech/siren"
 authors = ["fisher60 <kyler@abandontech.com>"]
+license = "MIT"
+packages = [
+    { include = "siren.py" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pydantic = "^2.5.3"
 
 [tool.poetry.dev-dependencies]
 
