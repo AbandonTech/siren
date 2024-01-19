@@ -1,4 +1,4 @@
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, field_validator, model_validator
 
 MAX_OP_LEVEL = 4
 
@@ -20,3 +20,10 @@ class Command(BaseModel):
             return level
 
         raise ValueError(f"op_level must be a value 0-{MAX_OP_LEVEL}")
+
+    @model_validator(mode="after")
+    def multiplayer_only_and_singleplayer_only_are_exclusive(self):
+        if self.singleplayer_only and self.multiplayer_only:
+            raise ValueError("singleplayer_only and multiplayer_only are mutually exclusive")
+
+        return self

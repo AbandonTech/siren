@@ -108,12 +108,12 @@ commands = {
         world_command=True
     ),
     "experience": Command(
-        command="effect",
+        command="experience",
         op_level=2,
         player_command=True
     ),
     "fill": Command(
-        command="effect",
+        command="fill",
         op_level=2,
         block_command=True,
     ),
@@ -272,7 +272,7 @@ commands = {
         mob_command=True,
         player_command=True
     ),
-    "safe-all": Command(
+    "save-all": Command(
         command="save-all",
         op_level=4,
         multiplayer_only=True,
