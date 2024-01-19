@@ -6,6 +6,7 @@ MAX_OP_LEVEL = 4
 class Command(BaseModel):
     command: str
     multiplayer_only: bool = False
+    singleplayer_only: bool = False
     op_level: int
     block_command: bool = False
     mob_command: bool = False
