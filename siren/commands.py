@@ -1,4 +1,4 @@
-from models import Command
+from siren.models import Command
 
 commands = {
     "advancement": Command(
