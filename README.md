@@ -2,14 +2,15 @@
 Python package for authenticating and communicating with a Minecraft server using the Minecraft RCON protocol
 
 # Sample Usage
+
 ```python
 import asyncio
 
-import siren
+from siren import RconClient
 
 
 async def test_auth() -> None:
-    async with siren.RconClient("123.2.3.4", 25575, "AVeryRealPassword") as client:
+    async with RconClient("123.2.3.4", 25575, "AVeryRealPassword") as client:
         print(await client.send("list"))
 
 

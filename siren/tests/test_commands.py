@@ -1,4 +1,4 @@
-from commands import commands
+from siren.commands import commands
 
 
 def test_commands_have_correct_names():
